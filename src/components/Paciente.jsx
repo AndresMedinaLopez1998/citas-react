@@ -1,12 +1,18 @@
 
-const Paciente = () => {
+const Paciente = ({paciente, setPaciente}) => {
+  const { nombre, propietario, email, fecha, sintomas } = paciente;
   return (
-    <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl ">
-        <p className="font-bold mb-3 text-gray-700 uppercase">Mascota: <span className="font-normal normal-case"> Hook</span></p>
-        <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: <span className="font-normal normal-case"> Andrés</span></p>
-        <p className="font-bold mb-3 text-gray-700 uppercase">Correo: <span className="font-normal normal-case"> a.medinalopez@ugto.mx</span></p>
-        <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alta: <span className="font-normal normal-case"> 10/05/2023</span></p>
-        <p className="font-bold mb-3 text-gray-700 uppercase">Sintomas: <span className="font-normal normal-case"> Muy grave del estomago y de la garganta esta ronca</span></p>
+    <div className="mx-5 my-10 bg-white shadow-md px-5 py-10 rounded-xl ">
+        <p className="font-bold mb-3 text-gray-700 uppercase">Mascota: <span className="font-normal normal-case"> {nombre}</span></p>
+        <p className="font-bold mb-3 text-gray-700 uppercase">Propietario: <span className="font-normal normal-case"> {propietario}</span></p>
+        <p className="font-bold mb-3 text-gray-700 uppercase">Correo: <span className="font-normal normal-case"> {email}</span></p>
+        <p className="font-bold mb-3 text-gray-700 uppercase">Fecha Alta: <span className="font-normal normal-case"> {fecha}</span></p>
+        <p className="font-bold mb-3 text-gray-700 uppercase">Sintomas: <span className="font-normal normal-case"> {sintomas}</span></p>
+
+        <div className="flex justify-between mt-10">
+          <button type="button" className="py-2 px-10 bg-indigo-600 hover:bg-indigo-800 text-white font-bold uppercase rounded" onClick={() => setPaciente(paciente)}>Editar</button>
+          <button type="button" className="py-2 px-10 bg-red-500 hover:bg-red-700 text-white font-bold uppercase rounded" >Eliminar</button>
+        </div>
     </div>
   )
 }
